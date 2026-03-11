@@ -1,0 +1,20 @@
+name: Demented Square Bot Execution
+
+on:
+  schedule:
+    - cron: "0 2,8,14,20 * * *"  # Din mein 4 baar chalega (Analyst bot se alag time par)
+  workflow_dispatch:
+
+jobs:
+  run-square-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - run: pip install requests
+      - name: Execute Square Bot
+        env:
+          SQUARE_BOT_TOKEN: ${{ secrets.SQUARE_BOT_TOKEN }}
+        run: python square_bot.py
