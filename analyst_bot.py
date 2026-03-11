@@ -135,20 +135,17 @@ if __name__ == "__main__":
     print(f"Status: Monitoring Real-Time Liquidity via Binance API\n")
     print("-" * 50)
     
-    while True:
-        reports_generated = 0
-        for pair in TRADING_PAIRS:
-            analysis = fetch_and_analyze_data(pair)
-            
-            if analysis:
-                print_structured_report(analysis)
-                reports_generated += 1
-            
-            # 🛡️ BRAHMASTRA: Har coin check karne ke baad 2 second ka gap, taaki ISP block na kare!
-            time.sleep(2)
-                
-        print("-" * 50)
-        print(f"⏳ Waiting {CHECK_INTERVAL} seconds for the next minute's data cycle...")
-        print("-" * 50)
-        # Wait for the next minute's data
-        time.sleep(CHECK_INTERVAL)
+   reports_generated = 0
+    for pair in TRADING_PAIRS:
+        analysis = fetch_and_analyze_data(pair)
+
+        if analysis:
+            print_structured_report(analysis)
+            reports_generated += 1
+
+        # 🛡️ BRAHMASTRA: Har coin check karne ke baad 2 second ka gap
+        time.sleep(2)
+
+    print("-" * 50)
+    print(f"✅ Actions Cycle Complete. Analyzed {reports_generated} pairs.")
+    print("-" * 50)
