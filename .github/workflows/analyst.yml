@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-steps:
+    steps:  # 🚨 FIX: Isey theek space dekar andar kiya gaya hai
       - name: Checkout Code
         uses: actions/checkout@v4
 
