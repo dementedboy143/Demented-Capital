@@ -1,6 +1,5 @@
 # Demented-Omni-Claw — Offensive AI for Crypto Intelligence
 [Security-First] [Explainable-AI] [Zero-Trust] [Contest-Ready]
-![CI](https://github.com/dementedboy143/Demented-Capital/actions/workflows/ci.yml/badge.svg)
 
 > Offensive strategy beats Defensive bots. While typical AI tools wait to warn you after the dump, we hunt whale intent, score retail traps before they spring, and broadcast explainable actions—under a zero-trust, signed-skill perimeter.
 
@@ -34,15 +33,15 @@ scripts/             setup_war_room.sh, manual_strike.py --demo showcase
 `
 
 ## Quickstart
-1) Clone and install: pip install -r requirements.txt
-2) Configure keys: copy .env.example to .env; keys are AES-encrypted by core/config_loader.py.
-3) Run the 2-click showcase: python scripts/manual_strike.py --demo
-4) (Optional) Daemon mode: python main.py --mode alpha-radar or --mode coach
+1) Clone and install: pip install -r requirements.txt  
+2) Configure keys: copy .env.example to .env; keys are AES-encrypted by core/config_loader.py.  
+3) Run the 2-click showcase: python scripts/manual_strike.py --demo  
+4) (Optional) Daemon mode: python main.py --mode alpha-radar or --mode coach  
 
 ## Demo Deliverables
-- manual_strike.py --demo prints a full Matrix-style alert, including integrity check, whale spike, Trap Score, and a ready-to-post Square/Telegram message with DYOR footer.
-- Use the output to record the contest GIF/video—no live keys required.
-**Watch the Omni-Claw Zero-Trust AI in action:**
+- manual_strike.py --demo prints a full Matrix-style alert, including integrity check, whale spike, Trap Score, and a ready-to-post Square/Telegram message with DYOR footer.  
+- Use the output to record the contest GIF/video—no live keys required.  
+**Watch the Omni-Claw Zero-Trust AI in action:**  
 ![Omni-Claw Zero-Trust Demo](assets/demo.gif)
 
 ## Contest Positioning
