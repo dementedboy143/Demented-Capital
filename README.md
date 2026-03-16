@@ -1,5 +1,6 @@
 # Demented-Omni-Claw — Offensive AI for Crypto Intelligence
 [Security-First] [Explainable-AI] [Zero-Trust] [Contest-Ready]
+![CI](https://github.com/dementedboy143/Demented-Capital/actions/workflows/ci.yml/badge.svg)
 
 > Offensive strategy beats Defensive bots. While typical AI tools wait to warn you after the dump, we hunt whale intent, score retail traps before they spring, and broadcast explainable actions—under a zero-trust, signed-skill perimeter.
 
