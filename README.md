@@ -1,1 +1,0 @@
-# Demented-Capital
