@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+dist/
+.env
+data_pipeline/memory_vault/*.db
