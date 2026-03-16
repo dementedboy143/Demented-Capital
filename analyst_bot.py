@@ -10,20 +10,17 @@ from datetime import datetime
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # --- SYSTEM CONFIGURATION ---
-# GitHub Actions se API Key automatically fetch hogi (Secure method)
 API_KEY = os.getenv("BINANCE_API_KEY") 
 DB_PATH = "post_memory.json"
 BINANCE_URL = "https://www.binance.com/bapi/composite/v1/public/pgc/openApi/content/add"
 
 class AnalystNode:
-    """Scans market data to find top volatile coins."""
     def get_market_data(self):
         print("📊 Analyst Node: Scanning Binance 24h Ticker...")
         try:
             url = "https://api.binance.com/api/v3/ticker/24hr"
             data = requests.get(url, verify=False).json()
             
-            # Filter valid USDT pairs with high volume
             alts = [c for c in data if c['symbol'].endswith('USDT') and float(c['quoteVolume']) > 10000000]
             top_movers = sorted(alts, key=lambda x: abs(float(x['priceChangePercent'])), reverse=True)[:10]
             selected = random.choice(top_movers)
@@ -39,7 +36,6 @@ class AnalystNode:
             return {"coin": "BTC", "trend": "consolidating heavily", "price": 0, "change": 0}
 
 class EducatorNode:
-    """Translates raw data into the 'Golden Format' Educational Narrative."""
     def generate_narrative(self, market_data):
         print("🧠 Educator Node: Crafting Educational Narrative...")
         coin = market_data['coin']
@@ -47,7 +43,6 @@ class EducatorNode:
         change = market_data['change']
         trend = market_data['trend']
         
-        # Golden Format Template
         post_text = (
             f"🚨 MARKET ALERT: LIQUIDITY SHIFT 🚨\n\n"
             f"📊 LIVE DATA:\n"
@@ -65,7 +60,6 @@ class EducatorNode:
         return post_text
 
 class DiversityEngine:
-    """Ensures 0% spam rate by maintaining unique cryptographic hashes."""
     def is_unique(self, content):
         print("🛡️ Diversity Engine: Verifying Cryptographic Uniqueness...")
         post_hash = hashlib.md5(content.encode()).hexdigest()
@@ -81,14 +75,12 @@ class DiversityEngine:
             return False
             
         memory.append(post_hash)
-        # Keep memory light (last 1000 posts)
         with open(DB_PATH, 'w') as f:
             json.dump(memory[-1000:], f)
             
         return True
 
 class PublisherNode:
-    """Executes the final payload via Binance Square API."""
     def publish(self, content):
         if not API_KEY:
             print("🚨 FATAL ERROR: BINANCE_API_KEY is missing! GitHub Secrets check kijiye.")
@@ -117,7 +109,7 @@ class PublisherNode:
 
 def run_demented_bot():
     print(f"\n--- ⚙️ INITIATING DEMENTED ANALYST BOT | {datetime.now()} ---")
-    reports_generated = 0  # Counter tracker
+    reports_generated = 0
     
     analyst = AnalystNode()
     educator = EducatorNode()
