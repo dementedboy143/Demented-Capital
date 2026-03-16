@@ -1,5 +1,5 @@
 """Retail Trap Scorer
-Combines volume spike, price momentum, RSI, and whale flow direction into a 0–100 risk score.
+Combines volume spike, price momentum, RSI, and whale flow direction into a 0â€“100 risk score.
 """
 from __future__ import annotations
 
@@ -48,14 +48,3 @@ def compute_retail_trap_score(
         "score": score,
         "rationale": f"Score: {score}. {rationale}.",
     }
-
-
-if __name__ == "__main__":
-    demo = compute_retail_trap_score(
-        volume_spike_pct=120,
-        price_delta_pct=7,
-        rsi=74,
-        whale_flow="outflow",
-        orderbook_imbalance_pct=22,
-    )
-    print(demo)
